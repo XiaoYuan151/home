@@ -1,0 +1,15 @@
+@import "./base.css";
+
+body {
+  margin: 0;
+  overflow-y: auto;
+  position: relative;
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
