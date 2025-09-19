@@ -20,7 +20,7 @@ async function sha256(email) {
 <template>
   <main>
     <div class="header">
-      <div class="title">
+      <div class="title" @click="window.location.replace('/')">
         <img ref="avatar" alt="avatar" src="" />
         <h1>小源151</h1>
       </div>
@@ -43,14 +43,23 @@ async function sha256(email) {
       <section class="section">
         <h2>赞助链接</h2>
         <h3>使用以下链接注册以支持我，并享受专属优惠！</h3>
-        <a href="//xylnk.in/bandwagonhost" target="_blank">BandwagonHost</a>
-        <a href="//xylnk.in/akile" target="_blank">AkileCloud</a>
-        <a href="//xylnk.in/donate" target="_blank">官方网站</a>
+        <a href="//xylnk.in/bandwagonhost" target="_blank"
+          >BandwagonHost - 速度超快的服务器提供商</a
+        >
+        <a href="//xylnk.in/justmysocks" target="_blank"
+          >JustMySocks - 速度超快的代理服务提供商</a
+        >
+        <a href="//xylnk.in/akile" target="_blank"
+          >AkileCloud - 便宜的服务器提供商</a
+        >
+        <a href="//xylnk.in/facmata" target="_blank"
+          >FacMata.NET - 便宜的代理服务提供商</a
+        >
       </section>
       <section class="section">
         <h2>友情链接</h2>
-        <a href="/" target="_blank">官方网站</a>
-        <a href="/" target="_blank">官方网站</a>
+        <a href="//www.xiaoyuanstd.org" target="_blank">小源工作室</a>
+        <a href="//wyf9.top" target="_blank">wyf9 的博客</a>
         <a href="/" target="_blank">官方网站</a>
       </section>
       <section class="section">
@@ -94,6 +103,8 @@ main {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .title img {
@@ -125,6 +136,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  user-select: none;
 }
 
 .section h2 {
