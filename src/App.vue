@@ -59,15 +59,15 @@ async function sha256(email) {
       <section class="section">
         <h2>友情链接</h2>
         <a href="//www.xiaoyuanstd.org" target="_blank">小源工作室</a>
+        <a href="//ai.xiaoyuan151.com" target="_blank">小源人工智能</a>
         <a href="//wyf9.top" target="_blank">wyf9 的博客</a>
-        <a href="/" target="_blank">官方网站</a>
       </section>
       <section class="section">
         <h2>其他链接</h2>
         <a href="//src.xiaoyuan151.net/pub.gpg" target="_blank"
           >官方 GnuPG 公钥</a
         >
-        <a href="/" target="_blank">官方网站</a>
+        <a href="//swarm.xiaoyuan151.com" target="_blank">蜂群工具箱</a>
         <a href="//img.xiaoyuan151.com/neuro" target="_blank"
           >随机 Neuro 图片</a
         >
@@ -94,10 +94,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
+  width: fit-content;
   display: flex;
   flex-direction: row;
   gap: 10px;
