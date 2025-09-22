@@ -199,7 +199,7 @@ main {
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
-  padding: 24px 16px 48px;
+  padding: 14px 6px 38px;
 }
 
 .header {
