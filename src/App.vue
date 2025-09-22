@@ -69,6 +69,15 @@ async function sha256(email) {
         >
         <a
           href="javascript:
+            navigator.clipboard.writeText('DDr7NdvdtzxsQTuesq5UDNXT8WQAUEotjH');
+            alert('已将 Dogecoin 地址复制到剪切板');
+          "
+        >
+          <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
+          通过 Dogecoin 支持我</a
+        >
+        <a
+          href="javascript:
             navigator.clipboard.writeText(
               '0xA57F5F34f6a0B8f44C3363dBA6Dd996f801A0500',
             );
@@ -93,6 +102,18 @@ async function sha256(email) {
       <section class="section">
         <h2>赞助链接</h2>
         <h3>使用以下链接注册以支持我（完全免费），并享受专属优惠！</h3>
+        <a href="//xylnk.in/binance" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          Binance - 安全便捷的加密货币交易所</a
+        >
+        <a href="//xylnk.in/wasabicard" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          WasabiCard - 安全便捷的加密货币虚拟卡</a
+        >
+        <a href="//xylnk.in/wise" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          Wise - 专业的跨境汇款平台</a
+        >
         <a href="//xylnk.in/bandwagonhost" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           BandwagonHost - 速度超快的服务器提供商</a
@@ -100,6 +121,14 @@ async function sha256(email) {
         <a href="//xylnk.in/justmysocks" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           JustMySocks - 速度超快的代理服务提供商</a
+        >
+        <a href="//xylnk.in/dmit" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          DMIT - 高品质的服务器提供商</a
+        >
+        <a href="//xylnk.in/racknerd" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          RackNerd - 便宜大碗的服务器提供商</a
         >
         <a href="//xylnk.in/akile" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
