@@ -2,10 +2,14 @@
 import { onMounted, ref } from "vue";
 
 const avatar = ref(null);
+const year = ref(null);
 onMounted(() => {
   sha256("xiaoyuan151@outlook.com").then((hash) => {
     avatar.value.src = `https://www.gravatar.com/avatar/${hash}`;
   });
+  const start = 2024;
+  const current = new Date().getFullYear();
+  year.value.textContent = start === current ? current : `${start}–${current}`;
 });
 
 async function sha256(email) {
@@ -175,6 +179,15 @@ async function sha256(email) {
       </section>
     </div>
   </main>
+  <footer>
+    <p>
+      &copy; 版权所有 <span ref="year"></span> 小源151 | 保留所有权利 |
+      <a href="https://icp.gov.moe/?keyword=20250319" target="_blank"
+        >萌ICP备20250319号</a
+      >
+    </p>
+    <p><a href="/privacy">隐私政策</a> | <a href="/terms">使用条款</a></p>
+  </footer>
 </template>
 
 <style scoped>
@@ -278,5 +291,13 @@ main {
 .section a:hover {
   border-color: var(--color-border-hover);
   background-color: var(--color-background-mute);
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>
