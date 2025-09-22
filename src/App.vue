@@ -264,6 +264,9 @@ main {
   flex-direction: row;
   gap: 5px;
   align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   text-decoration: none;
   padding-left: 10px;
   border: 1px solid transparent;
