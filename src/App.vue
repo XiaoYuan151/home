@@ -29,7 +29,7 @@ async function sha256(email) {
         <h1>小源151</h1>
       </div>
       <p>欢迎来到小源151官方网站！</p>
-      <p style="white-space: nowrap">
+      <p>
         如对页面内容有任何疑问，请联系：<a href="mailto:contact@xiaoyuan151.com"
           >contact@xiaoyuan151.com</a
         >
@@ -193,6 +193,7 @@ async function sha256(email) {
 <style scoped>
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 main {
@@ -218,6 +219,15 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+}
+
+.header a {
+  font-weight: bold;
+}
+
+.header a:hover {
+  color: var(--color-border-hover);
 }
 
 .title {
@@ -234,10 +244,6 @@ main {
 .title img {
   height: 80px;
   border-radius: 10px;
-}
-
-.contact a:hover {
-  color: var(--color-border-hover);
 }
 
 .content {
@@ -280,7 +286,6 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  text-decoration: none;
   padding-left: 10px;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -299,5 +304,13 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: var(--color-border-hover);
 }
 </style>
