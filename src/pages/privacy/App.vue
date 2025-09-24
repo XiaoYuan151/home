@@ -134,6 +134,7 @@ async function sha256(email) {
 <style scoped>
 a {
   color: inherit;
+  font-weight: bold;
   text-decoration: none;
   user-select: none;
 }
@@ -168,14 +169,6 @@ main {
   white-space: nowrap;
 }
 
-.header a {
-  font-weight: bold;
-}
-
-.header a:hover {
-  color: var(--color-border-hover);
-}
-
 .title {
   width: fit-content;
   display: flex;
@@ -204,9 +197,5 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-footer a {
-  font-weight: bold;
 }
 </style>

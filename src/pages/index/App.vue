@@ -157,6 +157,10 @@ async function sha256(email) {
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
           wyf9 的博客</a
         >
+        <a href="//zackzheng1121.github.io" target="_blank">
+          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
+          zackzheng 的小基地</a
+        >
         <a href="//siiway.top" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
           SiiWay 的官网</a
