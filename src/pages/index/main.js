@@ -1,4 +1,4 @@
-import "./assets/main.css";
+import "/src/assets/main.css";
 import "@fontsource/noto-sans-sc/400.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";

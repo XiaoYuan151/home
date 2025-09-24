@@ -24,7 +24,7 @@ async function sha256(email) {
 <template>
   <main>
     <div class="header">
-      <div class="title" @click="window.location.replace('/')">
+      <div class="title">
         <img ref="avatar" alt="avatar" src="" />
         <h1>小源151</h1>
       </div>
@@ -38,7 +38,7 @@ async function sha256(email) {
     <div class="content">
       <section class="section">
         <h2>官方链接</h2>
-        <a href="/" target="_blank">
+        <a href="//www.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'house']" size="lg" />
           官方网站</a
         >
@@ -194,6 +194,7 @@ async function sha256(email) {
 a {
   color: inherit;
   text-decoration: none;
+  user-select: none;
 }
 
 main {
@@ -237,7 +238,6 @@ main {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   user-select: none;
 }
 
