@@ -3,6 +3,10 @@ import { onMounted, ref } from "vue";
 
 const avatar = ref(null);
 const year = ref(null);
+const cn = ref(false);
+if (location.hostname.endsWith(".cn")) {
+  cn.value = true;
+}
 onMounted(() => {
   sha256("xiaoyuan151@outlook.com").then((hash) => {
     avatar.value.src = `https://www.gravatar.com/avatar/${hash}`;
@@ -103,7 +107,7 @@ async function sha256(email) {
           通过 TRON 支持我</a
         >
       </section>
-      <section class="section">
+      <section v-if="!cn" class="section">
         <h2>赞助链接</h2>
         <h3>使用以下链接注册以支持我（完全免费），并享受专属优惠！</h3>
         <a href="//xylnk.in/binance" target="_blank">
@@ -186,7 +190,10 @@ async function sha256(email) {
   <footer>
     <p>
       &copy; 版权所有 <span ref="year"></span> 小源151 | 保留所有权利 |
-      <a href="https://icp.gov.moe/?keyword=20250319" target="_blank"
+      <a v-if="cn" href="https://beian.miit.gov.cn" target="_blank"
+        >桂ICP备2025072112号</a
+      >
+      <a v-else href="https://icp.gov.moe/?keyword=20250319" target="_blank"
         >萌ICP备20250319号</a
       >
     </p>
