@@ -8,28 +8,21 @@ if (location.hostname.endsWith(".cn")) {
   cn.value = true;
 }
 onMounted(() => {
-  sha256("xiaoyuan151@outlook.com").then((hash) => {
-    avatar.value.src = `https://www.gravatar.com/avatar/${hash}`;
-  });
   const start = 2024;
   const current = new Date().getFullYear();
   year.value.textContent = start === current ? current : `${start}–${current}`;
 });
-
-async function sha256(email) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(email);
-  const buffer = await crypto.subtle.digest("SHA-256", data);
-  const array = Array.from(new Uint8Array(buffer));
-  return array.map((b) => b.toString(16).padStart(2, "0")).join("");
-}
 </script>
 
 <template>
   <main>
     <div class="header">
       <div class="title">
-        <img ref="avatar" alt="avatar" src="" />
+        <img
+          ref="avatar"
+          alt="avatar"
+          src="https://img.xiaoyuan151.net/avatar.jpg"
+        />
         <h1>小源151</h1>
       </div>
       <p>欢迎来到小源151官方网站！</p>
