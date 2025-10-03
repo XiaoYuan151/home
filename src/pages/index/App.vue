@@ -27,7 +27,11 @@ onMounted(() => {
       </div>
       <p>欢迎来到小源151官方网站！</p>
       <p>
-        如对页面内容有任何疑问，请联系：<a href="mailto:contact@xiaoyuan151.com"
+        如对页面内容有任何疑问，请联系：
+        <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+          >contact@xiaoyuan151.com.cn</a
+        >
+        <a v-else href="mailto:contact@xiaoyuan151.com"
           >contact@xiaoyuan151.com</a
         >
       </p>

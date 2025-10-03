@@ -91,7 +91,12 @@ onMounted(() => {
       </ul>
       <p>
         如需行使这些权利，请通过
-        <a href="mailto:contact@xiaoyuan151.com">contact@xiaoyuan151.com</a>
+        <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+          >contact@xiaoyuan151.com.cn</a
+        >
+        <a v-else href="mailto:contact@xiaoyuan151.com"
+          >contact@xiaoyuan151.com</a
+        >
         联系我们。
       </p>
       <h2>7. 第三方链接</h2>
@@ -110,7 +115,11 @@ onMounted(() => {
       <h2>10. 联系我们</h2>
       <p>如您对本隐私政策有任何疑问或意见，请通过以下方式联系我们：</p>
       <p>
-        电子邮件：<a href="mailto:contact@xiaoyuan151.com"
+        电子邮件：
+        <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+          >contact@xiaoyuan151.com.cn</a
+        >
+        <a v-else href="mailto:contact@xiaoyuan151.com"
           >contact@xiaoyuan151.com</a
         >
       </p>

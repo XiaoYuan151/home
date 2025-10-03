@@ -87,7 +87,11 @@ onMounted(() => {
       <h2>10. 联系方式</h2>
       <p>如有疑问，请通过以下方式联系我们：</p>
       <p>
-        电子邮件：<a href="mailto:contact@xiaoyuan151.com"
+        电子邮件：
+        <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+          >contact@xiaoyuan151.com.cn</a
+        >
+        <a v-else href="mailto:contact@xiaoyuan151.com"
           >contact@xiaoyuan151.com</a
         >
       </p>
