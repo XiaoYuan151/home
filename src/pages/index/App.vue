@@ -107,39 +107,39 @@ onMounted(() => {
       <section v-if="!cn" class="section">
         <h2>赞助链接</h2>
         <h3>使用以下链接注册以支持我（完全免费），并享受专属优惠！</h3>
-        <a href="//xylnk.in/binance" target="_blank">
+        <a href="//uur.li/binance" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           Binance - 安全便捷的加密货币交易所</a
         >
-        <a href="//xylnk.in/wasabicard" target="_blank">
+        <a href="//uur.li/wasabicard" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           WasabiCard - 安全便捷的加密货币虚拟卡</a
         >
-        <a href="//xylnk.in/wise" target="_blank">
+        <a href="//uur.li/wise" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           Wise - 专业的跨境汇款平台</a
         >
-        <a href="//xylnk.in/bandwagonhost" target="_blank">
+        <a href="//uur.li/bandwagonhost" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           BandwagonHost - 速度超快的服务器提供商</a
         >
-        <a href="//xylnk.in/justmysocks" target="_blank">
+        <a href="//uur.li/justmysocks" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           JustMySocks - 速度超快的代理服务提供商</a
         >
-        <a href="//xylnk.in/dmit" target="_blank">
+        <a href="//uur.li/dmit" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           DMIT - 高品质的服务器提供商</a
         >
-        <a href="//xylnk.in/racknerd" target="_blank">
+        <a href="//uur.li/racknerd" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           RackNerd - 便宜大碗的服务器提供商</a
         >
-        <a href="//xylnk.in/akile" target="_blank">
+        <a href="//uur.li/akile" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           AkileCloud - 便宜的服务器提供商</a
         >
-        <a href="//xylnk.in/facmata" target="_blank">
+        <a href="//uur.li/facmata" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
           FacMata.NET - 便宜的代理服务提供商</a
         >
