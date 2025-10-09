@@ -133,7 +133,7 @@ onMounted(() => {
         >
         <a href="//uur.li/racknerd" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          RackNerd - 便宜大碗的服务器提供商</a
+          RackNerd - 便宜的服务器提供商</a
         >
         <a href="//uur.li/akile" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
@@ -141,7 +141,19 @@ onMounted(() => {
         >
         <a href="//uur.li/facmata" target="_blank">
           <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          FacMata.NET - 便宜的代理服务提供商</a
+          FacMata.NET - 高品质的代理服务提供商</a
+        >
+        <a href="//uur.li/sac" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          SAC - 高品质的代理服务提供商</a
+        >
+        <a href="//uur.li/pqjc" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          赔钱机场 - 便宜的代理服务提供商</a
+        >
+        <a href="//uur.li/yfjc" target="_blank">
+          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
+          一分机场 - 便宜的代理服务提供商</a
         >
       </section>
       <section class="section">
