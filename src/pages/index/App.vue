@@ -12,6 +12,7 @@ onMounted(() => {
   const start = 2024;
   const current = new Date().getFullYear();
   year.value.textContent = start === current ? current : `${start}–${current}`;
+  document.title = t("title");
 });
 </script>
 
