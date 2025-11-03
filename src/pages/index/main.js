@@ -21,6 +21,7 @@ import {
 
 import { createApp } from "vue";
 import App from "./App.vue";
+import i18n from "./i18n";
 
 library.add(faHouse);
 library.add(faBlog);
@@ -35,4 +36,5 @@ library.add(faHandHoldingDollar);
 library.add(faLink);
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
+app.use(i18n);
 app.mount("#app");

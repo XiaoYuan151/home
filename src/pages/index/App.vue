@@ -1,7 +1,8 @@
 <script setup>
 import { onMounted, ref } from "vue";
+import { useI18n } from "vue-i18n";
 
-const avatar = ref(null);
+const { t, locale } = useI18n();
 const year = ref(null);
 const cn = ref(false);
 if (location.hostname.endsWith(".cn")) {
@@ -18,16 +19,12 @@ onMounted(() => {
   <main>
     <div class="header">
       <div class="title">
-        <img
-          ref="avatar"
-          alt="avatar"
-          src="https://img.xiaoyuan151.net/avatar.jpg"
-        />
-        <h1>小源151</h1>
+        <img alt="avatar" src="https://img.xiaoyuan151.net/avatar.jpg" />
+        <h1>{{ t("title") }}</h1>
       </div>
-      <p>欢迎来到小源151官方网站！</p>
+      <p>{{ t("welcome") }}</p>
       <p>
-        如对页面内容有任何疑问，请联系：
+        {{ t("contact") }}
         <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
           >contact@xiaoyuan151.com.cn</a
         >
@@ -38,30 +35,30 @@ onMounted(() => {
     </div>
     <div class="content">
       <section class="section">
-        <h2>官方链接</h2>
+        <h2>{{ t("official") }}</h2>
         <a href="//www.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'house']" size="lg" />
-          官方网站</a
+          {{ t("website") }}</a
         >
         <a href="//blog.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'blog']" size="lg" />
-          官方博客</a
+          {{ t("blog") }}</a
         >
         <a href="//drive.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'cloud']" size="lg" />
-          官方网盘</a
+          {{ t("drive") }}</a
         >
         <a href="//music.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'compact-disc']" size="lg" />
-          官方音乐站</a
+          {{ t("music") }}</a
         >
         <a href="//git.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fab', 'git-alt']" size="lg" />
-          官方代码站</a
+          {{ t("git") }}</a
         >
         <a href="//status.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'laptop']" size="lg" />
-          官方状态站</a
+          {{ t("status") }}</a
         >
         <a
           href="javascript:
@@ -70,7 +67,7 @@ onMounted(() => {
           "
         >
           <font-awesome-icon :icon="['fab', 'bitcoin']" size="lg" />
-          通过 Bitcoin 支持我</a
+          {{ t("bitcoin") }}</a
         >
         <a
           href="javascript:
@@ -79,7 +76,7 @@ onMounted(() => {
           "
         >
           <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
-          通过 Dogecoin 支持我</a
+          {{ t("dogecoin") }}</a
         >
         <a
           href="javascript:
@@ -90,7 +87,7 @@ onMounted(() => {
           "
         >
           <font-awesome-icon :icon="['fab', 'ethereum']" size="lg" />
-          通过 Ethereum 支持我</a
+          {{ t("ethereum") }}</a
         >
         <a
           href="javascript:
@@ -101,7 +98,7 @@ onMounted(() => {
           "
         >
           <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
-          通过 TRON 支持我</a
+          {{ t("tron") }}</a
         >
       </section>
       <section v-if="!cn" class="section">
@@ -198,15 +195,18 @@ onMounted(() => {
   </main>
   <footer>
     <p>
-      &copy; 版权所有 <span ref="year"></span> 小源151 | 保留所有权利 |
-      <a v-if="cn" href="https://beian.miit.gov.cn" target="_blank"
-        >桂ICP备2025072112号</a
-      >
-      <a v-else href="https://icp.gov.moe/?keyword=20250319" target="_blank"
-        >萌ICP备20250319号</a
-      >
+      &copy; {{ t("copy") }} <span ref="year"></span> {{ t("owner") }}
+      <a v-if="cn" href="https://beian.miit.gov.cn" target="_blank">{{
+        t("beian")
+      }}</a>
+      <a v-else href="https://icp.gov.moe/?keyword=20250319" target="_blank">{{
+        t("icp")
+      }}</a>
     </p>
-    <p><a href="/privacy">隐私政策</a> | <a href="/terms">使用条款</a></p>
+    <p>
+      <a href="/privacy">{{ t("privacy") }}</a> |
+      <a href="/terms">{{ t("terms") }}</a>
+    </p>
   </footer>
 </template>
 
