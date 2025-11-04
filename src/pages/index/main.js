@@ -1,6 +1,5 @@
 import "/src/assets/main.css";
 import "@fontsource/noto-sans-sc/400.css";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
@@ -18,11 +17,28 @@ import {
   faEthereum,
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
-
 import { createApp } from "vue";
+import { createI18n } from "vue-i18n";
 import App from "./App.vue";
-import i18n from "./i18n";
+import zh from "./locales/zh.json";
+import en from "./locales/en.json";
 
+let locale = "zh";
+const lang = navigator.language || navigator.userLanguage;
+if (lang.startsWith("zh")) {
+  locale = "zh";
+} else {
+  locale = "en";
+}
+const i18n = createI18n({
+  legacy: false,
+  locale: locale,
+  fallbackLocale: "en",
+  messages: {
+    zh,
+    en,
+  },
+});
 library.add(faHouse);
 library.add(faBlog);
 library.add(faCloud);

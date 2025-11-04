@@ -1,19 +1,22 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import zh from "@/pages/terms/components/zh.vue";
-import en from "@/pages/terms/components/en.vue";
+import zh from "./components/zh.vue";
+import en from "./components/en.vue";
 
 const { t, locale } = useI18n();
 const year = ref(null);
 const cn = ref(false);
-if (location.hostname.endsWith(".cn")) {
-  cn.value = true;
-}
 onMounted(() => {
+  if (location.hostname.endsWith(".cn")) {
+    cn.value = true;
+  }
   const start = 2024;
   const current = new Date().getFullYear();
-  year.value.textContent = start === current ? current : `${start}–${current}`;
+  if (year.value) {
+    year.value.textContent =
+      start === current ? current : `${start}–${current}`;
+  }
   document.title = t("title");
 });
 </script>
