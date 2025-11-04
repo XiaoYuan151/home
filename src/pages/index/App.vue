@@ -3,8 +3,8 @@ import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t, locale } = useI18n();
-const year = ref(null);
 const cn = ref(false);
+const year = ref(null);
 onMounted(() => {
   if (location.hostname.endsWith(".cn")) {
     cn.value = true;

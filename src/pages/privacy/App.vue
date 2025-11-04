@@ -5,11 +5,15 @@ import zh from "./components/zh.vue";
 import en from "./components/en.vue";
 
 const { t, locale } = useI18n();
-const year = ref(null);
 const cn = ref(false);
+const chn = ref(false);
+const year = ref(null);
 onMounted(() => {
   if (location.hostname.endsWith(".cn")) {
     cn.value = true;
+  }
+  if (locale.value === "zh") {
+    chn.value = true;
   }
   const start = 2024;
   const current = new Date().getFullYear();
@@ -32,7 +36,7 @@ onMounted(() => {
       <a href="/">{{ t("back") }}</a>
     </div>
     <div class="content">
-      <zh v-if="locale.value === 'zh'"></zh>
+      <zh v-if="chn"></zh>
       <en v-else></en>
     </div>
   </main>
