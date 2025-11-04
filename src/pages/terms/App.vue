@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import zh from "./locales/components/zh.vue";
-import en from "./locales/components/en.vue";
+import zh from "@/pages/terms/components/zh.vue";
+import en from "@/pages/terms/components/en.vue";
 
 const { t, locale } = useI18n();
 const year = ref(null);

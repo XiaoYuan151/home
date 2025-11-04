@@ -6,7 +6,7 @@ let locale = "zh";
 const lang = navigator.language || navigator.userLanguage;
 if (lang.startsWith("zh")) {
   locale = "zh";
-} else if (lang.startsWith("en")) {
+} else {
   locale = "en";
 }
 const i18n = createI18n({
