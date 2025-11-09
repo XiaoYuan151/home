@@ -17,6 +17,40 @@ onMounted(() => {
   }
   document.title = t("title");
 });
+const copy_bitcoin = async () => {
+  try {
+    await navigator.clipboard.writeText("3DPDaQ63u7nKJpc1jYgrPQTmu5vfgaWpUB");
+    alert(t("bitcoin_alert"));
+  } catch (err) {
+    alert(t("err") + err);
+  }
+};
+const copy_dogecoin = async () => {
+  try {
+    await navigator.clipboard.writeText("DDr7NdvdtzxsQTuesq5UDNXT8WQAUEotjH");
+    alert(t("dogecoin_alert"));
+  } catch (err) {
+    alert(t("err") + err);
+  }
+};
+const copy_ethereum = async () => {
+  try {
+    await navigator.clipboard.writeText(
+      "0xA57F5F34f6a0B8f44C3363dBA6Dd996f801A0500",
+    );
+    alert(t("ethereum_alert"));
+  } catch (err) {
+    alert(t("err") + err);
+  }
+};
+const copy_tron = async () => {
+  try {
+    await navigator.clipboard.writeText("TUVwPUf1NMFUbeuLQ91Qa4fPDWzZsxEwyF");
+    alert(t("tron_alert"));
+  } catch (err) {
+    alert(t("err") + err);
+  }
+};
 </script>
 
 <template>
@@ -64,43 +98,19 @@ onMounted(() => {
           <font-awesome-icon :icon="['fas', 'laptop']" size="lg" />
           {{ t("status") }}</a
         >
-        <a
-          href="javascript:
-            navigator.clipboard.writeText('3DPDaQ63u7nKJpc1jYgrPQTmu5vfgaWpUB');
-            alert('已将 Bitcoin 地址复制到剪切板');
-          "
-        >
+        <a @click="copy_bitcoin">
           <font-awesome-icon :icon="['fab', 'bitcoin']" size="lg" />
           {{ t("bitcoin") }}</a
         >
-        <a
-          href="javascript:
-            navigator.clipboard.writeText('DDr7NdvdtzxsQTuesq5UDNXT8WQAUEotjH');
-            alert('已将 Dogecoin 地址复制到剪切板');
-          "
-        >
+        <a @click="copy_dogecoin">
           <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
           {{ t("dogecoin") }}</a
         >
-        <a
-          href="javascript:
-            navigator.clipboard.writeText(
-              '0xA57F5F34f6a0B8f44C3363dBA6Dd996f801A0500',
-            );
-            alert('已将 Ethereum 地址复制到剪切板');
-          "
-        >
+        <a @click="copy_ethereum">
           <font-awesome-icon :icon="['fab', 'ethereum']" size="lg" />
           {{ t("ethereum") }}</a
         >
-        <a
-          href="javascript:
-            navigator.clipboard.writeText(
-              'TUVwPUf1NMFUbeuLQ91Qa4fPDWzZsxEwyF',
-            );
-            alert('已将 TRON 地址复制到剪切板');
-          "
-        >
+        <a @click="copy_tron">
           <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
           {{ t("tron") }}</a
         >
@@ -158,41 +168,41 @@ onMounted(() => {
         >
       </section>
       <section class="section">
-        <h2>友情链接</h2>
+        <h2>{{ t("link") }}</h2>
         <a href="//www.xiaoyuanstd.org" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          小源工作室</a
+          {{ t("xystd") }}</a
         >
         <a href="//ai.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          小源人工智能</a
+          {{ t("xyai") }}</a
         >
         <a href="//wyf9.top" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          wyf9 的博客</a
+          {{ t("wyf9") }}</a
         >
         <a href="//zackzheng1121.github.io" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          zackzheng 的小基地</a
+          {{ t("zackzheng") }}</a
         >
         <a href="//siiway.top" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          SiiWay 的官网</a
+          {{ t("siiway") }}</a
         >
       </section>
       <section class="section">
-        <h2>其他链接</h2>
+        <h2>{{ t("other") }}</h2>
         <a href="//src.xiaoyuan151.net/pub.gpg" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          官方 GnuPG 公钥</a
+          {{ t("gpg") }}</a
         >
         <a href="//swarm.xiaoyuan151.com" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          蜂群工具箱</a
+          {{ t("swarm") }}</a
         >
-        <a href="//img.xiaoyuan151.com/neuro" target="_blank">
+        <a href="//img.xiaoyuan151.net/neuro" target="_blank">
           <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          随机 Neuro 图片</a
+          {{ t("neuro") }}</a
         >
       </section>
     </div>
@@ -306,6 +316,7 @@ main {
   display: flex;
   flex-direction: row;
   gap: 5px;
+  cursor: pointer;
   align-items: center;
   overflow: hidden;
   white-space: nowrap;
