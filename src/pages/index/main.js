@@ -23,7 +23,7 @@ import App from "./App.vue";
 import zh from "./locales/zh.json";
 import en from "./locales/en.json";
 
-let locale = "zh";
+let locale;
 const lang = navigator.language || navigator.userLanguage;
 if (lang.startsWith("zh")) {
   locale = "zh";
@@ -35,8 +35,8 @@ const i18n = createI18n({
   locale: locale,
   fallbackLocale: "en",
   messages: {
-    zh,
     en,
+    zh,
   },
 });
 library.add(faHouse);
