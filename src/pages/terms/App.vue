@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import PageHeader from "@/components/PageHeader.vue";
+import PageFooter from "@/components/PageFooter.vue";
 import zh from "./components/zh.vue";
 import en from "./components/en.vue";
 
@@ -27,33 +29,40 @@ onMounted(() => {
 
 <template>
   <main>
-    <div class="header">
-      <div class="title">
-        <img alt="avatar" src="https://img.xiaoyuan151.net/avatar.jpg" />
-        <h1>{{ t("title") }}</h1>
-      </div>
-      <p>{{ t("update") }}</p>
-      <a href="/">{{ t("back") }}</a>
-    </div>
+    <PageHeader
+      v-if="cn"
+      :title="t('title')"
+      :subtitle="t('update')"
+      :html="`<a href='/'>${t('back')}</a>`"
+    />
+    <PageHeader
+      v-else
+      :title="t('title')"
+      :subtitle="t('update')"
+      :html="`<a href='/'>${t('back')}</a>`"
+    />
     <div class="content">
       <zh v-if="chn"></zh>
       <en v-else></en>
     </div>
   </main>
   <footer>
-    <p>
-      &copy; {{ t("copy") }} <span ref="year"></span> {{ t("owner") }}
-      <a v-if="cn" href="https://beian.miit.gov.cn" target="_blank">{{
-        t("beian")
-      }}</a>
-      <a v-else href="https://icp.gov.moe/?keyword=20250319" target="_blank">{{
-        t("icp")
-      }}</a>
-    </p>
-    <p>
-      <a href="/privacy">{{ t("privacy") }}</a> |
-      <a href="/terms">{{ t("terms") }}</a>
-    </p>
+    <PageFooter
+      v-if="cn"
+      :copy="t('copy')"
+      :owner="t('owner')"
+      :icp="`<a href='https://beian.miit.gov.cn' target='_blank'>${t('beian')}</a>`"
+      :privacy="t('privacy')"
+      :terms="t('terms')"
+    />
+    <PageFooter
+      v-else
+      :copy="t('copy')"
+      :owner="t('owner')"
+      :icp="`<a href='https://icp.gov.moe/?keyword=20250319' target='_blank'>${t('icp')}</a>`"
+      :privacy="t('privacy')"
+      :terms="t('terms')"
+    />
   </footer>
 </template>
 
@@ -76,52 +85,10 @@ main {
   padding: 14px 6px 38px;
 }
 
-.header {
-  width: 100%;
-  margin: 24px auto 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
-}
-
-.header p {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-}
-
-.title {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-}
-
-.title img {
-  height: 80px;
-  border-radius: 10px;
-}
-
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 </style>
