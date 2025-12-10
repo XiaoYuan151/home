@@ -41,6 +41,7 @@ defineProps({
   color: inherit;
   text-decoration: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .footer {
@@ -57,5 +58,13 @@ defineProps({
 
 .footer :deep(a:hover) {
   color: var(--color-border-hover);
+}
+
+.footer hr {
+  width: 100vw;
+  height: 1px;
+  border: none;
+  background-color: var(--color-border);
+  margin: 8px 0;
 }
 </style>

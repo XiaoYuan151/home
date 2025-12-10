@@ -1,16 +1,21 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { tabs } from "@/configs/tabs";
+import { links } from "@/configs/links";
 import PageHeader from "@/components/PageHeader.vue";
+import PageSection from "@/components/PageSection.vue";
 import PageFooter from "@/components/PageFooter.vue";
 
 const { t, locale } = useI18n();
 const cn = ref(false);
+const tab = ref(0);
+const sections = links(t);
 onMounted(() => {
+  document.title = t("title");
   if (location.hostname.endsWith(".cn")) {
     cn.value = true;
   }
-  document.title = t("title");
 });
 const copy_bitcoin = async () => {
   await navigator.clipboard.writeText("3DPDaQ63u7nKJpc1jYgrPQTmu5vfgaWpUB");
@@ -34,172 +39,49 @@ const copy_tron = async () => {
 
 <template>
   <main>
-    <PageHeader
-      v-if="cn"
-      :title="t('title')"
-      :subtitle="t('welcome')"
-      :html="`${t('contact')}<a href='mailto:contact@xiaoyuan151.com.cn'>contact@xiaoyuan151.com.cn</a>`"
-    />
-    <PageHeader
-      v-else
-      :title="t('title')"
-      :subtitle="t('welcome')"
-      :html="`${t('contact')}<a href='mailto:contact@xiaoyuan151.com'>contact@xiaoyuan151.com</a>`"
-    />
+    <header>
+      <PageHeader
+        v-if="cn"
+        @tab="tab = $event"
+        :title="t('title')"
+        :subtitle_1="t('welcome')"
+        :subtitle_2="`${t('contact')}<a href='mailto:contact@xiaoyuan151.com.cn'>contact@xiaoyuan151.com.cn</a>`"
+        :list="tabs(t)"
+      />
+      <PageHeader
+        v-else
+        @tab="tab = $event"
+        :title="t('title')"
+        :subtitle_1="t('welcome')"
+        :subtitle_2="`${t('contact')}<a href='mailto:contact@xiaoyuan151.com'>contact@xiaoyuan151.com</a>`"
+        :list="tabs(t)"
+      />
+    </header>
     <div class="content">
-      <section class="section">
-        <h2>{{ t("official") }}</h2>
-        <a href="//www.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'house']" size="lg" />
-          {{ t("website") }}</a
-        >
-        <a href="//blog.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'blog']" size="lg" />
-          {{ t("blog") }}</a
-        >
-        <a href="//drive.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'cloud']" size="lg" />
-          {{ t("drive") }}</a
-        >
-        <a href="//music.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'compact-disc']" size="lg" />
-          {{ t("music") }}</a
-        >
-        <a href="//git.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fab', 'git-alt']" size="lg" />
-          {{ t("git") }}</a
-        >
-        <a href="//status.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'laptop']" size="lg" />
-          {{ t("status") }}</a
-        >
-        <a @click="copy_bitcoin">
-          <font-awesome-icon :icon="['fab', 'bitcoin']" size="lg" />
-          {{ t("bitcoin") }}</a
-        >
-        <a @click="copy_dogecoin">
-          <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
-          {{ t("dogecoin") }}</a
-        >
-        <a @click="copy_ethereum">
-          <font-awesome-icon :icon="['fab', 'ethereum']" size="lg" />
-          {{ t("ethereum") }}</a
-        >
-        <a @click="copy_tron">
-          <font-awesome-icon :icon="['fas', 'dollar-sign']" size="lg" />
-          {{ t("tron") }}</a
-        >
-      </section>
-      <section v-if="!cn" class="section">
-        <h2>赞助链接</h2>
-        <h3>使用以下链接注册以支持我（完全免费），并享受专属优惠！</h3>
-        <a href="//uur.li/binance" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          Binance - 安全便捷的加密货币交易所</a
-        >
-        <a href="//uur.li/wasabicard" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          WasabiCard - 安全便捷的加密货币虚拟卡</a
-        >
-        <a href="//uur.li/wise" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          Wise - 专业的跨境汇款平台</a
-        >
-        <a href="//uur.li/bandwagonhost" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          BandwagonHost - 速度超快的服务器提供商</a
-        >
-        <a href="//uur.li/justmysocks" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          JustMySocks - 速度超快的代理服务提供商</a
-        >
-        <a href="//uur.li/dmit" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          DMIT - 高品质的服务器提供商</a
-        >
-        <a href="//uur.li/racknerd" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          RackNerd - 便宜的服务器提供商</a
-        >
-        <a href="//uur.li/akile" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          AkileCloud - 便宜的服务器提供商</a
-        >
-        <a href="//uur.li/facmata" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          FacMata.NET - 高品质的代理服务提供商</a
-        >
-        <a href="//uur.li/sac" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          SAC - 高品质的代理服务提供商</a
-        >
-        <a href="//uur.li/pqjc" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          赔钱机场 - 便宜的代理服务提供商</a
-        >
-        <a href="//uur.li/yfjc" target="_blank">
-          <font-awesome-icon :icon="['fas', 'hand-holding-dollar']" size="lg" />
-          一分机场 - 便宜的代理服务提供商</a
-        >
-      </section>
-      <section class="section">
-        <h2>{{ t("link") }}</h2>
-        <a href="//www.xiaoyuanstd.org" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("xystd") }}</a
-        >
-        <a href="//ai.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("xyai") }}</a
-        >
-        <a href="//wyf9.top" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("wyf9") }}</a
-        >
-        <a href="//zackzheng1121.github.io" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("zackzheng") }}</a
-        >
-        <a href="//siiway.top" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("siiway") }}</a
-        >
-      </section>
-      <section class="section">
-        <h2>{{ t("other") }}</h2>
-        <a href="//src.xiaoyuan151.net/pub.gpg" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("gpg") }}</a
-        >
-        <a href="//swarm.xiaoyuan151.com" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("swarm") }}</a
-        >
-        <a href="//img.xiaoyuan151.net/neuro" target="_blank">
-          <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-          {{ t("neuro") }}</a
-        >
-      </section>
+      <PageSection v-if="tab === 0" :list="sections.official" />
+      <PageSection v-if="cn === false && tab === 1" :list="sections.sponsor" />
+      <PageSection v-if="tab === 2" :list="sections.friendly" />
+      <PageSection v-if="tab === 3" :list="sections.other" />
     </div>
+    <footer>
+      <PageFooter
+        v-if="cn"
+        :copy="t('copy')"
+        :owner="t('owner')"
+        :icp="`<a href='https://beian.miit.gov.cn' target='_blank'>${t('beian')}</a>`"
+        :privacy="t('privacy')"
+        :terms="t('terms')"
+      />
+      <PageFooter
+        v-else
+        :copy="t('copy')"
+        :owner="t('owner')"
+        :icp="`<a href='https://icp.gov.moe/?keyword=20250319' target='_blank'>${t('icp')}</a>`"
+        :privacy="t('privacy')"
+        :terms="t('terms')"
+      />
+    </footer>
   </main>
-  <footer>
-    <PageFooter
-      v-if="cn"
-      :copy="t('copy')"
-      :owner="t('owner')"
-      :icp="`<a href='https://beian.miit.gov.cn' target='_blank'>${t('beian')}</a>`"
-      :privacy="t('privacy')"
-      :terms="t('terms')"
-    />
-    <PageFooter
-      v-else
-      :copy="t('copy')"
-      :owner="t('owner')"
-      :icp="`<a href='https://icp.gov.moe/?keyword=20250319' target='_blank'>${t('icp')}</a>`"
-      :privacy="t('privacy')"
-      :terms="t('terms')"
-    />
-  </footer>
 </template>
 
 <style scoped>
@@ -211,61 +93,19 @@ a {
 
 main {
   width: 100%;
+  height: 100vh;
   max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin: 0 auto;
   padding: 14px 6px 38px;
 }
 
 .content {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  user-select: none;
-}
-
-.section h2 {
-  font-size: 16px;
-  padding-left: 4px;
-}
-
-.section h3 {
-  font-size: 10px;
-  padding-left: 4px;
-}
-
-.section h2 + h3 {
-  margin-top: -10px;
-}
-
-.section a {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  cursor: pointer;
-  align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding-left: 10px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background-color: var(--color-background-soft);
-  transition: border-color 0.3s ease;
-}
-
-.section a:hover {
-  border-color: var(--color-border-hover);
-  background-color: var(--color-background-mute);
+  height: auto;
+  flex: 1;
+  overflow-y: scroll;
 }
 </style>

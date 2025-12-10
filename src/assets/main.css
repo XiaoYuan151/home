@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
   font-family: "Noto Sans SC", sans-serif;
 }
