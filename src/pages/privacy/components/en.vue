@@ -9,7 +9,8 @@ if (location.hostname.endsWith(".cn")) {
 <template>
   <p>
     Welcome to
-    <a v-if="cn" href="//www.xiaoyuan151.com.cn">www.xiaoyuan151.com.cn</a
+    <a v-if="cn === true" href="//www.xiaoyuan151.com.cn"
+      >www.xiaoyuan151.com.cn</a
     ><a v-else href="//www.xiaoyuan151.com">www.xiaoyuan151.com</a>(hereinafter
     referred to as "we" or "this website"). We value your privacy highly and are
     committed to protecting your personal information. This privacy policy
@@ -116,7 +117,7 @@ if (location.hostname.endsWith(".cn")) {
   </p>
   <p>
     Email:
-    <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+    <a v-if="cn === true" href="mailto:contact@xiaoyuan151.com.cn"
       >contact@xiaoyuan151.com.cn</a
     >
     <a v-else href="mailto:contact@xiaoyuan151.com">contact@xiaoyuan151.com</a>

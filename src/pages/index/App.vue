@@ -13,6 +13,7 @@ const tab = ref(0);
 const sections = links(t);
 onMounted(() => {
   document.title = t("title");
+  document.body.style.overflowY = "hidden";
   if (location.hostname.endsWith(".cn")) {
     cn.value = true;
   }
@@ -41,7 +42,7 @@ const copy_tron = async () => {
   <main>
     <header>
       <PageHeader
-        v-if="cn"
+        v-if="cn === true"
         @tab="tab = $event"
         :title="t('title')"
         :subtitle_1="t('welcome')"
@@ -65,7 +66,7 @@ const copy_tron = async () => {
     </div>
     <footer>
       <PageFooter
-        v-if="cn"
+        v-if="cn === true"
         :copy="t('copy')"
         :owner="t('owner')"
         :icp="`<a href='https://beian.miit.gov.cn' target='_blank'>${t('beian')}</a>`"

@@ -9,7 +9,8 @@ if (location.hostname.endsWith(".cn")) {
 <template>
   <p>
     Welcome to
-    <a v-if="cn" href="//www.xiaoyuan151.com.cn">www.xiaoyuan151.com.cn</a
+    <a v-if="cn === true" href="//www.xiaoyuan151.com.cn"
+      >www.xiaoyuan151.com.cn</a
     ><a v-else href="//www.xiaoyuan151.com">www.xiaoyuan151.com</a>(hereinafter
     referred to as "this website" or "we"). These Terms of Use (hereinafter
     referred to as "Terms") govern your use of this website and its services,
@@ -103,7 +104,7 @@ if (location.hostname.endsWith(".cn")) {
   </p>
   <p>
     Email:
-    <a v-if="cn" href="mailto:contact@xiaoyuan151.com.cn"
+    <a v-if="cn === true" href="mailto:contact@xiaoyuan151.com.cn"
       >contact@xiaoyuan151.com.cn</a
     >
     <a v-else href="mailto:contact@xiaoyuan151.com">contact@xiaoyuan151.com</a>
