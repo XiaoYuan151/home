@@ -60,8 +60,12 @@ const copy_tron = async () => {
     </header>
     <div class="content">
       <PageSection v-if="tab === 0" :list="sections.official" />
-      <PageSection v-if="cn === false && tab === 1" :list="sections.sponsor" />
-      <PageSection v-if="tab === 2" :list="sections.friendly" />
+      <PageSection
+        v-if="cn === false && tab === 1"
+        :list="sections.sponsor"
+        :subtitle="t('sponsor_subtitle')"
+      />
+      <PageSection v-if="tab === 2" :list="sections.link" />
       <PageSection v-if="tab === 3" :list="sections.other" />
     </div>
     <footer>

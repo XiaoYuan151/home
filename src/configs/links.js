@@ -36,65 +36,65 @@ export function links(t) {
       {
         url: "//uur.li/binance",
         icon: ["fas", "hand-holding-dollar"],
-        name: "Binance - 安全便捷的加密货币交易所",
+        name: t("binance"),
       },
       {
         url: "//uur.li/wasabicard",
         icon: ["fas", "hand-holding-dollar"],
-        name: "WasabiCard - 安全便捷的加密货币虚拟卡",
+        name: t("wasabicard"),
       },
       {
         url: "//uur.li/wise",
         icon: ["fas", "hand-holding-dollar"],
-        name: "Wise - 专业的跨境汇款平台",
+        name: t("wise"),
       },
       {
         url: "//uur.li/bandwagonhost",
         icon: ["fas", "hand-holding-dollar"],
-        name: "BandwagonHost - 速度超快的服务器提供商",
+        name: t("bandwagonhost"),
       },
       {
         url: "//uur.li/justmysocks",
         icon: ["fas", "hand-holding-dollar"],
-        name: "JustMySocks - 速度超快的代理服务提供商",
+        name: t("justmysocks"),
       },
       {
         url: "//uur.li/dmit",
         icon: ["fas", "hand-holding-dollar"],
-        name: "DMIT - 高品质的服务器提供商",
+        name: t("dmit"),
       },
       {
         url: "//uur.li/racknerd",
         icon: ["fas", "hand-holding-dollar"],
-        name: "RackNerd - 便宜的服务器提供商",
+        name: t("racknerd"),
       },
       {
         url: "//uur.li/akile",
         icon: ["fas", "hand-holding-dollar"],
-        name: "AkileCloud - 便宜的服务器提供商",
+        name: t("akile"),
       },
       {
         url: "//uur.li/facmata",
         icon: ["fas", "hand-holding-dollar"],
-        name: "FacMata.NET - 高品质的代理服务提供商",
+        name: t("facmata"),
       },
       {
         url: "//uur.li/sac",
         icon: ["fas", "hand-holding-dollar"],
-        name: "SAC - 高品质的代理服务提供商",
+        name: t("sac"),
       },
       {
         url: "//uur.li/pqjc",
         icon: ["fas", "hand-holding-dollar"],
-        name: "赔钱机场 - 便宜的代理服务提供商",
+        name: t("pqjc"),
       },
       {
         url: "//uur.li/yfjc",
         icon: ["fas", "hand-holding-dollar"],
-        name: "一分机场 - 便宜的代理服务提供商",
+        name: t("yfjc"),
       },
     ],
-    friendly: [
+    link: [
       {
         url: "//www.xiaoyuanstd.org",
         icon: ["fas", "link"],
@@ -109,6 +109,16 @@ export function links(t) {
         url: "//wyf9.top",
         icon: ["fas", "link"],
         name: t("wyf9"),
+      },
+      {
+        url: "//krnl32.win",
+        icon: ["fas", "link"],
+        name: t("krnl32"),
+      },
+      {
+        url: "//krnl64.win",
+        icon: ["fas", "link"],
+        name: t("krnl64"),
       },
       {
         url: "//zackzheng1121.github.io",

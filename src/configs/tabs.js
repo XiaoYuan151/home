@@ -6,7 +6,7 @@ export function tabs(t) {
     },
     {
       id: 1,
-      name: "赞助链接",
+      name: t("sponsor"),
     },
     {
       id: 2,
