@@ -1,7 +1,4 @@
 <script setup>
-import { useI18n } from "vue-i18n";
-
-const { t, locale } = useI18n();
 defineProps({
   subtitle: {
     type: String,
@@ -9,7 +6,7 @@ defineProps({
   },
   list: {
     type: Array,
-    required: false,
+    required: true,
   },
 });
 </script>
@@ -17,10 +14,10 @@ defineProps({
 <template>
   <section class="section">
     <h3 v-if="subtitle">{{ subtitle }}</h3>
-    <div v-for="links in list">
-      <a :href="links.url" target="_blank">
-        <font-awesome-icon :icon="links.icon" size="lg" />
-        {{ t(links.name) }}</a
+    <div v-for="link in list">
+      <a :href="link.url" target="_blank">
+        <font-awesome-icon :icon="link.icon" size="lg" />
+        {{ link.name }}</a
       >
     </div>
     <!--
