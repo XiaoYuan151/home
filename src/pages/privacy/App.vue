@@ -39,7 +39,7 @@ onMounted(() => {
       />
     </header>
     <div class="content">
-      <zh v-if="chn"></zh>
+      <zh v-if="chn === true"></zh>
       <en v-else></en>
     </div>
     <footer>
