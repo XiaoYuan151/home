@@ -121,6 +121,16 @@ export function links(t) {
         name: t("krnl64"),
       },
       {
+        url: "//liyao.edu.kg",
+        icon: ["fas", "link"],
+        name: t("liyao"),
+      },
+      {
+        url: "//blog.shirayukinoa.top",
+        icon: ["fas", "link"],
+        name: t("murasame"),
+      },
+      {
         url: "//zackzheng1121.github.io",
         icon: ["fas", "link"],
         name: t("zackzheng"),
